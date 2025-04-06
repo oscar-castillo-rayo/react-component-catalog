@@ -2,6 +2,17 @@ import { useEffect, useRef } from "react";
 import useSidebarStore from "../../store/useSidebarStore";
 import "./sidebar.css";
 import useCheckMobileStore from "../../store/useCheckMobileStore";
+import SidebarLink from "./SidebarLink";
+
+const sidebarLinks = [
+  { id: 1, name: "Navbar", url: "#navbars" },
+  { id: 2, name: "Footer", url: "#footers" },
+  { id: 3, name: "Slider", url: "#sliders" },
+  { id: 4, name: "Sidebar", url: "#sidebars" },
+  { id: 5, name: "Button", url: "#buttons" },
+  { id: 6, name: "Card", url: "#cards" },
+];
+
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebarStore();
   const { isMobile } = useCheckMobileStore();
@@ -41,26 +52,9 @@ const Sidebar = () => {
 
   return (
     <div ref={slidebarRef} className={"sidebar-container"}>
-      <div className="component-sidebar">
-        <a href="#navbars" onClick={closeSidebar}>
-          Navbar
-        </a>
-      </div>
-      <div className="component-sidebar" onClick={closeSidebar}>
-        sidebar
-      </div>
-      <div className="component-sidebar" onClick={closeSidebar}>
-        sidebar
-      </div>
-      <div className="component-sidebar" onClick={closeSidebar}>
-        sidebar
-      </div>
-      <div className="component-sidebar" onClick={closeSidebar}>
-        sideddddddbar
-      </div>
-      <div className="component-sidebar" onClick={closeSidebar}>
-        sidebar
-      </div>
+      {sidebarLinks.map((link) => (
+        <SidebarLink key={link.id} linkName={link.name} linkUrl={link.url} />
+      ))}
     </div>
   );
 };

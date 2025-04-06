@@ -11,7 +11,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     toggleSidebar();
-    console.log("toggleMenu", isSidebarOpen);
   };
 
   return (
@@ -31,9 +30,9 @@ const Header = () => {
               )}
             </button>
           )}
-
-          <nav className={`nav ${isMobile && !isSidebarOpen ? "hidden" : ""}`}>
-            {/* <ul>
+        </div>
+        <nav className={`nav ${isMobile && !isSidebarOpen ? "hidden" : ""}`}>
+          {/* <ul>
               <li>
                 <a
                   href="#home"
@@ -69,8 +68,7 @@ const Header = () => {
                 </a>
               </li>
             </ul> */}
-          </nav>
-        </div>
+        </nav>
       </nav>
     </>
   );

@@ -1,10 +1,13 @@
 .sidebar-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
   height: 100%;
-  padding: 1rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .component-sidebar {
@@ -17,7 +20,12 @@
 }
 
 .component-sidebar:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .sidebar-container {
+    width: 250px;
+  }
 }
